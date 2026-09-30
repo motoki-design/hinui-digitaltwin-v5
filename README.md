@@ -2,7 +2,7 @@
 
 島根県邑南町日貫地区のデジタルツイン v5（公開用の単一HTML）。10/19〜20 の植樹に向けた版。
 
-**v4からの変更（2026-10-05）**：区画の枠（植栽区A〜C・伐採区D・E1〜E3・現況植栽区・間伐区b.1〜b.6＝志賀さんの図をなぞった仮）と杭7点を `valley/`・`record/` に追加。`valley/` のスマホで写真の点が押しにくい不具合を修正。`record/` の背景に傾斜量図・10 cmの局所起伏。`wide/` はv4と同じ。v4＝ https://motoki-design.github.io/hinui-digitaltwin-v4/ （残してある）。
+**v4からの変更（2026-09-30）**：区画の枠（植栽区A〜C・伐採区D・E1〜E3・現況植栽区・間伐区b.1〜b.6＝志賀さんの図をなぞった仮）と杭7点を `valley/`・`record/` に追加。`valley/` のスマホで写真の点が押しにくい不具合を修正。`record/` の背景に傾斜量図・10 cmの局所起伏。`wide/` はv4と同じ。v4＝ https://motoki-design.github.io/hinui-digitaltwin-v4/ （残してある）。
 
 **v3からの変更（2026-09-28）**：`valley/index.html` をスマートフォンの指で操作できるようにした（1本指＝動かす／2本指ピンチ＝寄る・引く／ひねり＝回す・画面の横幅5 mまで寄れる・画面の横幅(m)表示・現在地の精度円を実寸）。`wide/` と `index.html` の中身はv3と同じ（入口に変更点を追記）。v3＝ https://motoki-design.github.io/hinui-digitaltwin-v3/ （残してある）。生成元の作業リポジトリのコミット＝`b6404b1`。
 
