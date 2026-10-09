@@ -37,14 +37,44 @@ footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--ln);
   font-size:12px;color:var(--dim)}
 code{background:#1a1f27;padding:1px 6px;border-radius:4px;font-size:12px}
 @media (max-width:600px){ .wrap{padding:32px 16px 64px} h1{font-size:22px} }
+/* v3 F12-1（2026-10-13）：配るURLはこのページ1本。最上段に親指で押せる2つの大ボタン */
+.entry{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:0 0 14px}
+.entry a{display:flex;flex-direction:column;justify-content:center;min-height:96px;padding:14px 16px;border-radius:14px;
+  text-decoration:none;font-weight:800;font-size:20px;line-height:1.35}
+.entry a small{display:block;font-weight:600;font-size:12.5px;opacity:.85;margin-top:4px}
+.entry a.rec{background:#66bb6a;color:#08140a}
+.entry a.val{background:var(--ac);color:#0b1117}
+.entry2{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 30px;font-size:13.5px}
+.entry2 a{color:var(--tx);background:var(--pan);border:1px solid var(--ln);border-radius:10px;padding:9px 14px;text-decoration:none}
+.entry2 a b{color:#e040fb}
+.howto{background:#1a1f27;border-left:3px solid var(--ac);border-radius:0 8px 8px 0;padding:10px 14px;font-size:13px;
+  color:#cfd8dc;margin:0 0 30px;line-height:1.7}
+@media (max-width:600px){ .entry{grid-template-columns:1fr} .entry a{min-height:84px} }
 </style>
 </head>
 <body>
 <div class="wrap">
 
 <h1>日貫 デジタルツイン v5（植樹 10/19 版）</h1>
+
+<div class="entry">
+  <a class="rec" href="record/">現地で記録する<small>スマートフォン・2D。立っている場所を地図でタップして点と写真を残す</small></a>
+  <a class="val" href="valley/">谷を見る<small>3D。実験林の谷を0.5 mの地形で見る（約25 MB）</small></a>
+</div>
+<div class="entry2">
+  <a href="record/?mode=plant"><b>植樹モード</b>で開く（先生・班用）</a>
+  <a href="wide/">広域（地区全体）</a>
+</div>
+<p class="howto"><b>山へ行く前に</b>（電波のある所で）：①Messenger や LINE の中で開いたときは、右上の「…」から<b>「Safariで開く」／「外部ブラウザーで開く」</b>
+②「現地で記録する」を開き、出てくる<b>出発前チェックの①〜③が✓</b>になるのを確かめる
+③iPhone は共有ボタン（□↑）→<b>「ホーム画面に追加」</b>。以後はそのアイコンから開けば、電波の無い山の中でも開けます。<br>
+Wi-Fi 版の iPad は GPS を持っていないので、現在地は動きません（記録は地図のタップで決められます）。</p>
 <p class="lead">島根県邑南町日貫地区。県の航空レーザー測量（0.5 m）にもとづく地形と、
 現地の計測を重ねて見るための試作です。ブラウザで開くだけで動きます（インストール不要・ネット接続不要）。スマートフォンでも見られます。</p>
+<p class="lead"><b>v5 追加（2026-10-13）</b>：入口を1本にしました（上の2つのボタン）。谷から現地記録へ・現地記録から谷へのボタンを足しました。
+Messenger などのアプリの中で開いたときに、外部のブラウザーで開き直す案内を出します。現地記録は起動時に<b>出発前チェック</b>（ブラウザー・オフライン・位置情報・ホーム画面）を出し、
+ホーム画面に追加できるようにしました。現在地は最初の1回の測位でなく、<b>最長20秒ためていちばん精度の良い値</b>を採り、画面の上に「GPS ±xx m・n秒前」を出します。
+タブレットでは谷のパネルを画面下のタブにまとめ、パソコンでもパネルを畳めるようにしました。現地記録の種類に「杭」を足しました。</p>
 <p class="lead"><b>v5 追加（2026-10-01）</b>：現地記録に<b>植樹モード</b>を足しました（<a href="record/?mode=plant">record/?mode=plant</a> で開く）。班を選び、「植えた」→写真（なくてもよい）→保存の3回で、植えた本数と区画が記録されます。谷には「日貫小学校の植樹（10/19〜20）」の層（区画別・班別の本数）を足しました。<b>植樹の写真は公開していません</b>（点と本数だけ）。共有フォルダ「現地記録_自動反映」に入れた写真と記録は、平日の夕方（17:35）に取り込んで載せます。</p>
 <p class="lead"><b>v5（2026-09-30）で変えたこと</b>：10/19〜20 の日貫小学校ほかの植樹に向けて、<b>区画の枠</b>（植栽区A・B・C／伐採区D・E1〜E3／現況植栽区／間伐区b.1〜b.6）と<b>杭7点</b>（志賀さん測定）を谷と現地記録の両方に載せました。枠はいただいた図をなぞった<b>仮の位置（±5〜10 m）</b>です。谷の版では、<b>スマートフォンで写真の点を押しても出にくかった不具合</b>を直しました（指が点から少しずれても拾う・「地形」で詳細が閉じる）。現地記録の背景に<b>傾斜量図と10 cmの局所起伏</b>を足しました。v4は <a href="https://motoki-design.github.io/hinui-digitaltwin-v4/">https://motoki-design.github.io/hinui-digitaltwin-v4/</a> にそのまま残しています。</p>
 <p class="lead"><b>v4（2026-09-28）で変えたこと</b>：実験林の谷を<b>スマートフォンの指で操作できる</b>ようにしました。1本指で動かす／2本指でつまんで寄る・広げて引く／2本指をひねって回す。<b>画面の横幅5 mまで寄れ</b>、画面下に今の横幅（m）が出ます。「現在地を出す」では、端末のGPSの精度を<b>実寸の円</b>で描きます。広域はv3と同じです。同日、スマートフォンで現地の点を記録する<b>現地記録（2D・試作）</b>を足しました。v3は <a href="https://motoki-design.github.io/hinui-digitaltwin-v3/">https://motoki-design.github.io/hinui-digitaltwin-v3/</a> にそのまま残しています。</p>

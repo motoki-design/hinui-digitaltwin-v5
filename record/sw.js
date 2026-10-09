@@ -1,7 +1,9 @@
 /* 日貫 現地記録（2D）— オフライン用。版が変わると古いキャッシュを消す */
-const C = "hinui-record-e8fbc5ac";
+const C = "hinui-record-4611388b";
 self.addEventListener("install", e => {
-  e.waitUntil(caches.open(C).then(c => c.addAll(["./", "./index.html"])).then(() => self.skipWaiting()));
+  // v3 F13-4：ホーム画面アプリの manifest とアイコンも同じキャッシュに（電波の無い所でアイコンから起動できる）
+  e.waitUntil(caches.open(C).then(c => c.addAll(["./", "./index.html", "./manifest.webmanifest", "./icon-192.png", "./icon-512.png"]))
+    .then(() => self.skipWaiting()));
 });
 self.addEventListener("activate", e => {
   e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k.startsWith("hinui-record-") && k !== C)
